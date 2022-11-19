@@ -1,0 +1,66 @@
+﻿@model   List<List<E_CommerceSite.Models.Computers>>
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<div class="container">
+    <div class="panel panel-info">
+        <div class="panel panel-heading">
+            <div class="panel panel-title">
+                <h3>NOTEBOOKS</h3>
+            </div>
+        </div>
+        <div class="panel-body">
+            <table class="table table table-responsive">
+                <thead>
+                    <tr>
+                        <th style="border-right: 1px dashed gray; text-align: center">Image</th>
+                        <th style="border-right: 1px dashed gray; text-align: center">Brand</th>
+                        <th style="border-right: 1px dashed gray; text-align: center">Series</th>
+                        <th style="border-right: 1px dashed gray; text-align: center">CPU Model</th>
+                        <th style="border-right: 1px dashed gray; text-align: center">Ram Memory</th>
+                        <th style="border-right: 1px dashed gray; text-align: center">Disc Size</th>
+                        <th style="border-right: 1px dashed gray; text-align: center">Operating System</th>
+                        <th style="border-right: 1px dashed gray; text-align: center">Screen Size</th>
+                        <th style="border-right: 1px dashed gray; text-align: center">Payment</th>
+                        <th>Payment</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @for (int i = 0; i < Model.Count; i++)
+                    {
+                        <tr>
+                            <td style="text-align:center"><img src="@Model[i][0].img" style="width:80px;height:80px" /></td>
+                            <td style="text-align:center">@Model[i][0].brand</td>
+                            <td style="text-align:center">@Model[i][0].model</td>
+                            <td style="text-align:center">@Model[i][0].processor</td>
+                            <td style="text-align:center">@Model[i][0].ram</td>
+                            <td style="text-align:center">@Model[i][0].disc</td>
+                            <td style="text-align:center">@Model[i][0].os</td>
+                            <td style="text-align:center">@Model[i][0].window</td>
+                            <td style="text-align:center">
+                                <div style="width:100px;height:130px;border:1px solid red">
+                                    <h3 style="font-size: 15px; text-align: center">@Model[i][0].website</h3>
+                                    <h3 style="font-size: 15px; text-align: center">@Model[i][0].payment</h3>
+                                    <a style="text-align: center" href="@Model[i][0].link">Visit</a>
+                                </div>
+                            </td>
+
+                            <td style="text-align:center">
+                                <div style="width: 100px; height: 130px; border: 1px solid red">
+                                    <h3 style="font-size: 15px; text-align: center">@Model[i][1].website</h3>
+                                    <h3 style="font-size: 15px; text-align: center">@Model[i][1].payment</h3>
+                                    <a style="text-align: center" href="@Model[i][1].link">Visit</a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>

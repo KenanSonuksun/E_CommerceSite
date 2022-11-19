@@ -1,0 +1,85 @@
+﻿@model IEnumerable<E_CommerceSite.Models.Computers>
+
+@{
+    ViewBag.Title = "SearchString";
+}
+
+<h2>SearchString</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.brand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.processor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ram)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.disc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.os)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.window)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.payment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.website)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.img)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.category)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.brand)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.model)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.processor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ram)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.disc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.os)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.window)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.payment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.website)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.img)
+        </td>
+    </tr>
+}
+
+</table>
